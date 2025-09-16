@@ -1,0 +1,49 @@
+{
+  "name": "Create Scheduled Callback - Exported 2024-11-19 @ 14:13",
+  "integrationType": "purecloud-data-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "/api/v2/conversations/callbacks",
+      "requestType": "POST",
+      "headers": {},
+      "requestTemplate": "{\n\"scriptId\": \"$!{input.scriptId}\",\n\"callbackNumbers\": [ \"${input.phone}\" ],\n\"queueId\": \"${input.queueId}\",\n\"callbackScheduledTime\": \"${input.dateTime}\"\n}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scriptId": {
+            "type": "string"
+          },
+          "queueId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "dateTime": {
+            "description": "The scheduled date-time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ.",
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "output": {
+      "successSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      }
+    }
+  },
+  "secure": false
+}

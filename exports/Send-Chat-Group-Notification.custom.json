@@ -1,0 +1,42 @@
+{
+  "name": "JVM Send Chat Group Notification - Exported 2024-11-19 @ 14:38",
+  "integrationType": "custom-rest-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "https://apps.mypurecloud.com:443/webhooks/api/v1/webhook/d7a2ea24-d582-4513-b8da-a0b22bf2204a",
+      "requestType": "POST",
+      "headers": {},
+      "requestTemplate": "{\"message\": \"${input.message}\",\"metadata\": \"${input.metadata}\"}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "output": {
+      "successSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      }
+    }
+  },
+  "secure": false
+}

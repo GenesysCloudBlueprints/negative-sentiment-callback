@@ -1,0 +1,24 @@
+variable "client_id" {
+  type        = string
+  description = "The OAuth (Client Credentails) Client ID to be used by Data Actions"
+}
+
+variable "client_secret" {
+  type        = string
+  description = "The OAuth (Client Credentails) Client Secret to be used by Data Actions"
+}
+
+variable "sms_number" {
+  type        = string
+  description = "Add your purchased SMS number with the format `+11234567890`"
+}
+
+variable "callback_queue" {
+  type        = string
+  description = "The name of your configured queue for handling callbacks."
+}
+
+variable "wrapup_code" {
+  type        = string
+  description = "The name of your configured wrap up code for negative customer interactions."
+}
